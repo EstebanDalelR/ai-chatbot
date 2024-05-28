@@ -17,6 +17,14 @@ export const authConfig = {
           return Response.redirect(new URL('/', nextUrl))
         }
       }
+      // The chat can be used without logging in
+      // uncomment these lines to prevent that
+      /* else {
+        const isOnChatPage = nextUrl.pathname.startsWith('/chat')
+        if (isOnChatPage) {
+          return Response.redirect(new URL('/login', nextUrl))
+        }
+      } */
 
       return true
     },
